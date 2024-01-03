@@ -10,6 +10,6 @@ import Foundation
 class HomeViewModel {
 
     public func fetchRequest() {
-        
+      
     }
 }

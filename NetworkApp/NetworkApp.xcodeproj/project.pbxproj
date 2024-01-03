@@ -17,6 +17,7 @@
 		460C66152B4473DF00059A6E /* NetworkAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C66142B4473DF00059A6E /* NetworkAppUITestsLaunchTests.swift */; };
 		460C66262B4475FB00059A6E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C66252B4475FA00059A6E /* HomeViewModel.swift */; };
 		460C66282B44762100059A6E /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C66272B44762100059A6E /* HomeService.swift */; };
+		4631BB862B459A19001B3A13 /* PersonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631BB852B459A18001B3A13 /* PersonList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		460C66142B4473DF00059A6E /* NetworkAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		460C66252B4475FA00059A6E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		460C66272B44762100059A6E /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		4631BB852B459A18001B3A13 /* PersonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		460C66222B4475D200059A6E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4631BB852B459A18001B3A13 /* PersonList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				460C65F22B4473DA00059A6E /* AppDelegate.swift in Sources */,
 				460C65F42B4473DA00059A6E /* SceneDelegate.swift in Sources */,
 				460C66262B4475FB00059A6E /* HomeViewModel.swift in Sources */,
+				4631BB862B459A19001B3A13 /* PersonList.swift in Sources */,
 				460C66282B44762100059A6E /* HomeService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
