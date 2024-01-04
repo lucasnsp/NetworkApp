@@ -43,29 +43,31 @@ class HomeService {
         }
 
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let error {
-                print("ERROR \(#function) Detalhe do error: \(error.localizedDescription)")
-                completion(.failure(.networkFailure(error)))
-                return
-            }
+            DispatchQueue.main.async {
+                if let error {
+                    print("ERROR \(#function) Detalhe do error: \(error.localizedDescription)")
+                    completion(.failure(.networkFailure(error)))
+                    return
+                }
 
-            guard let data else {
-                completion(.failure(.noData))
-                return
-            }
+                guard let data else {
+                    completion(.failure(.noData))
+                    return
+                }
 
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                completion(.failure(.invalidResponse))
-                return
-            }
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    completion(.failure(.invalidResponse))
+                    return
+                }
 
-            do {
-                let personList: PersonList = try JSONDecoder().decode(PersonList.self, from: data)
-                print("SUCCESS -> \(#function)")
-                completion(.success(personList))
-            } catch  {
-                print("ERROR -> \(#function)")
-                completion(.failure(.decodingFailure(error)))
+                do {
+                    let personList: PersonList = try JSONDecoder().decode(PersonList.self, from: data)
+                    print("SUCCESS -> \(#function)")
+                    completion(.success(personList))
+                } catch  {
+                    print("ERROR -> \(#function)")
+                    completion(.failure(.decodingFailure(error)))
+                }
             }
         }
         task.resume()
