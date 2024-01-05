@@ -25,6 +25,7 @@
 		46C230F72B483A9A00E54A53 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C230F62B483A9A00E54A53 /* NetworkError.swift */; };
 		46C230F92B483AE600E54A53 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C230F82B483AE600E54A53 /* HTTPMethod.swift */; };
 		46C230FB2B483B9800E54A53 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C230FA2B483B9800E54A53 /* NetworkLayer.swift */; };
+		46C230FD2B483EBB00E54A53 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C230FC2B483EBB00E54A53 /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		46C230F62B483A9A00E54A53 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		46C230F82B483AE600E54A53 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		46C230FA2B483B9800E54A53 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		46C230FC2B483EBB00E54A53 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 				46C230F62B483A9A00E54A53 /* NetworkError.swift */,
 				46C230F82B483AE600E54A53 /* HTTPMethod.swift */,
 				46C230FA2B483B9800E54A53 /* NetworkLayer.swift */,
+				46C230FC2B483EBB00E54A53 /* Endpoint.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46C230FD2B483EBB00E54A53 /* Endpoint.swift in Sources */,
 				4693173F2B474A2000FC2CDA /* CustomTableViewCellScreen.swift in Sources */,
 				460C65F22B4473DA00059A6E /* AppDelegate.swift in Sources */,
 				460C65F42B4473DA00059A6E /* SceneDelegate.swift in Sources */,

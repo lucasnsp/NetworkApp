@@ -10,9 +10,10 @@ import Foundation
 class HomeService {
 
     func getPersonList(completion: @escaping (Result<[Person],NetworkError>) -> Void) {
-        let urlString: String = "https://run.mocky.io/v3/06e0a58e-acac-41d4-8a5a-6e6be756364c"
+        let urlString: String = "06e0a58e-acac-41d4-8a5a-6e6be756364c"
+        var endpoint = Endpoint(url: urlString, method: .get, headers: nil, parameters: nil)
 
-        ServiceManager.shared.request(with: urlString, method: .get, decodeType: PersonList.self) { result in
+        ServiceManager.shared.request2(with: endpoint, decodeType: PersonList.self) { result in
             switch result {
             case .success(let success):
                 completion(.success(success.person))
