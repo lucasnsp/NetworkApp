@@ -34,43 +34,17 @@ extension NetworkError: LocalizedError {
 
 class HomeService {
 
-    func getPersonList(completion: @escaping (Result<PersonList,NetworkError>) -> Void) {
+    func getPersonList(completion: @escaping (Result<[Person],NetworkError>) -> Void) {
         let urlString: String = "https://run.mocky.io/v3/06e0a58e-acac-41d4-8a5a-6e6be756364c"
 
-        guard let url: URL = URL(string: urlString) else {
-            completion(.failure(.invalidURL(url: urlString)))
-            return
-        }
-
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            DispatchQueue.main.async {
-                if let error {
-                    print("ERROR \(#function) Detalhe do error: \(error.localizedDescription)")
-                    completion(.failure(.networkFailure(error)))
-                    return
-                }
-
-                guard let data else {
-                    completion(.failure(.noData))
-                    return
-                }
-
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                    completion(.failure(.invalidResponse))
-                    return
-                }
-
-                do {
-                    let personList: PersonList = try JSONDecoder().decode(PersonList.self, from: data)
-                    print("SUCCESS -> \(#function)")
-                    completion(.success(personList))
-                } catch  {
-                    print("ERROR -> \(#function)")
-                    completion(.failure(.decodingFailure(error)))
-                }
+        ServiceManager.shared.request(with: urlString, method: .get, decodeType: PersonList.self) { result in
+            switch result {
+            case .success(let success):
+                completion(.success(success.person))
+            case .failure(let failure):
+                completion(.failure(failure))
             }
         }
-        task.resume()
     }
 
 }

@@ -21,6 +21,7 @@
 		4693173F2B474A2000FC2CDA /* CustomTableViewCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4693173D2B474A2000FC2CDA /* CustomTableViewCellScreen.swift */; };
 		469317412B474A3F00FC2CDA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469317402B474A3F00FC2CDA /* HomeViewController.swift */; };
 		469317442B474A5100FC2CDA /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469317432B474A5100FC2CDA /* HomeScreen.swift */; };
+		46C230F52B482ED000E54A53 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C230F42B482ED000E54A53 /* ServiceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		4693173D2B474A2000FC2CDA /* CustomTableViewCellScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCellScreen.swift; sourceTree = "<group>"; };
 		469317402B474A3F00FC2CDA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		469317432B474A5100FC2CDA /* HomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		46C230F42B482ED000E54A53 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		460C65F02B4473DA00059A6E /* NetworkApp */ = {
 			isa = PBXGroup;
 			children = (
+				46C230F32B482EC100E54A53 /* Service */,
 				4693173A2B474A2000FC2CDA /* Cell */,
 				460C66222B4475D200059A6E /* Model */,
 				460C66212B4475C800059A6E /* Home */,
@@ -196,6 +199,14 @@
 				469317432B474A5100FC2CDA /* HomeScreen.swift */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		46C230F32B482EC100E54A53 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				46C230F42B482ED000E54A53 /* ServiceManager.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +348,7 @@
 				460C66262B4475FB00059A6E /* HomeViewModel.swift in Sources */,
 				4631BB862B459A19001B3A13 /* PersonList.swift in Sources */,
 				460C66282B44762100059A6E /* HomeService.swift in Sources */,
+				46C230F52B482ED000E54A53 /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
