@@ -43,7 +43,7 @@ class ServiceManager: NetworkLayer {
             return
         }
 
-        var request = requestBuilder.buildRequest(with: endpoint, url: url)
+        let request = requestBuilder.buildRequest(with: endpoint, url: url)
 
         let task = session.dataTask(with: request) { data, response, error in
             NetworkLogger.log(request: request, response: response, data: data, error: error)
