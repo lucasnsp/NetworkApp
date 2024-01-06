@@ -13,7 +13,7 @@ class HomeService {
         let urlString: String = "06e0a58e-acac-41d4-8a5a-6e6be756364c"
         let endpoint = Endpoint(url: urlString)
 
-        ServiceManager.shared.request2(with: endpoint, decodeType: PersonList.self) { result in
+        ServiceManager.shared.request(with: endpoint, decodeType: PersonList.self) { result in
             switch result {
             case .success(let success):
                 completion(.success(success.person))

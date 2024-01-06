@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ServiceManager {
+class ServiceManager: NetworkLayer {
 
     static var shared: ServiceManager = ServiceManager()
 
@@ -18,7 +18,7 @@ class ServiceManager {
 
     init(session: URLSession = URLSession.shared,
          baseURL: String? = nil,
-         requestBuilder: RequestBuilder = DefaultRequestBuilder(), 
+         requestBuilder: RequestBuilder = DefaultRequestBuilder(),
          decoder: JSONDecoder = JSONDecoder()) {
         self.requestBuilder = requestBuilder
         self.session = session
@@ -33,11 +33,12 @@ class ServiceManager {
         }
     }
 
-    func request2<T>(with endpoint: Endpoint, decodeType: T.Type, completion: @escaping (Result<T, NetworkError>) -> Void) where T : Decodable {
-        
+    func request<T>(with endpoint: Endpoint, decodeType: T.Type, completion: @escaping (Result<T, NetworkError>) -> Void) where T : Decodable {
+
         let urlString = baseURL + endpoint.url
 
         guard let url: URL = URL(string: urlString) else {
+            NetworkLogger.logError(error: .invalidURL(url: urlString))
             completion(.failure(.invalidURL(url: urlString)))
             return
         }
@@ -45,9 +46,9 @@ class ServiceManager {
         var request = requestBuilder.buildRequest(with: endpoint, url: url)
 
         let task = session.dataTask(with: request) { data, response, error in
+            NetworkLogger.log(request: request, response: response, data: data, error: error)
             DispatchQueue.main.async {
                 if let error {
-                    print("ERROR \(#function) Detalhe do error: \(error.localizedDescription)")
                     completion(.failure(.networkFailure(error)))
                     return
                 }
@@ -64,10 +65,8 @@ class ServiceManager {
 
                 do {
                     let object: T = try self.decoder.decode(T.self, from: data)
-                    print("SUCCESS -> \(#function)")
                     completion(.success(object))
                 } catch  {
-                    print("ERROR -> \(#function)")
                     completion(.failure(.decodingFailure(error)))
                 }
             }
