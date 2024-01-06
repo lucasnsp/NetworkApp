@@ -23,6 +23,7 @@
 		469317442B474A5100FC2CDA /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469317432B474A5100FC2CDA /* HomeScreen.swift */; };
 		46BAC1432B49B96500BE4C73 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BAC1422B49B96500BE4C73 /* RequestBuilder.swift */; };
 		46BAC1452B49B9C000BE4C73 /* DefaultRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BAC1442B49B9C000BE4C73 /* DefaultRequestBuilder.swift */; };
+		46BAC1472B49D83400BE4C73 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BAC1462B49D83400BE4C73 /* NetworkLogger.swift */; };
 		46C230F52B482ED000E54A53 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C230F42B482ED000E54A53 /* ServiceManager.swift */; };
 		46C230F72B483A9A00E54A53 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C230F62B483A9A00E54A53 /* NetworkError.swift */; };
 		46C230F92B483AE600E54A53 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C230F82B483AE600E54A53 /* HTTPMethod.swift */; };
@@ -68,6 +69,7 @@
 		469317432B474A5100FC2CDA /* HomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		46BAC1422B49B96500BE4C73 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		46BAC1442B49B9C000BE4C73 /* DefaultRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRequestBuilder.swift; sourceTree = "<group>"; };
+		46BAC1462B49D83400BE4C73 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		46C230F42B482ED000E54A53 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		46C230F62B483A9A00E54A53 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		46C230F82B483AE600E54A53 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				46C230FC2B483EBB00E54A53 /* Endpoint.swift */,
 				46BAC1422B49B96500BE4C73 /* RequestBuilder.swift */,
 				46BAC1442B49B9C000BE4C73 /* DefaultRequestBuilder.swift */,
+				46BAC1462B49D83400BE4C73 /* NetworkLogger.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				46C230F92B483AE600E54A53 /* HTTPMethod.swift in Sources */,
 				460C66282B44762100059A6E /* HomeService.swift in Sources */,
 				46C230F72B483A9A00E54A53 /* NetworkError.swift in Sources */,
+				46BAC1472B49D83400BE4C73 /* NetworkLogger.swift in Sources */,
 				46C230F52B482ED000E54A53 /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

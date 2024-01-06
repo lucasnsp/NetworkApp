@@ -13,10 +13,17 @@ class ServiceManager {
 
     private var baseURL: String
     private var requestBuilder: RequestBuilder
-    private var session: URLSession = URLSession.shared
+    private var session: URLSession
+    private var decoder: JSONDecoder
 
-    init(baseURL: String? = nil, requestBuilder: RequestBuilder = DefaultRequestBuilder()) {
+    init(session: URLSession = URLSession.shared,
+         baseURL: String? = nil,
+         requestBuilder: RequestBuilder = DefaultRequestBuilder(), 
+         decoder: JSONDecoder = JSONDecoder()) {
         self.requestBuilder = requestBuilder
+        self.session = session
+        self.decoder = decoder
+
         if let baseURL {
             self.baseURL = baseURL
         } else if let baseURLString = Bundle.main.infoDictionary?["BaseURL"] as? String {
@@ -25,8 +32,6 @@ class ServiceManager {
             self.baseURL = ""
         }
     }
-
-
 
     func request2<T>(with endpoint: Endpoint, decodeType: T.Type, completion: @escaping (Result<T, NetworkError>) -> Void) where T : Decodable {
         
@@ -58,9 +63,7 @@ class ServiceManager {
                 }
 
                 do {
-                    let decoder = JSONDecoder()
-                    decoder.dateDecodingStrategy = .iso8601
-                    let object: T = try decoder.decode(T.self, from: data)
+                    let object: T = try self.decoder.decode(T.self, from: data)
                     print("SUCCESS -> \(#function)")
                     completion(.success(object))
                 } catch  {
